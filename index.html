@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Calculator App</title>
+</head>
+<body>
+  <div class="calculator-container">
+    <section class="calculator">
+    <header class="header">
+      <h2>calc</h2>
+      <div class="header-right">
+          <p>THEME</p>
+          <div class="themes">
+              <p>123</p>
+              <div class="theme-toggle">
+                <label class="custom-radio-button">
+                  <input id="first" name="toggle-state" type="radio" checked />
+                  <span class="checkmark"></span>
+                </label>
+              
+                <label class="custom-radio-button">
+                  <input id="second" name="toggle-state" type="radio" />
+                  <span class="checkmark"></span>
+                </label>
+              
+                <label class="custom-radio-button">
+                  <input id="third" name="toggle-state" type="radio" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+          </div>
+      </div>     
+    </header>
+    <div class="screen">
+        <span data-previous-operand class="previous-operand"></span>
+        <span data-current-operand class="current-operand"></span>
+    </div>
+    <div class="keypad-container">
+    <div class="keypad-grid">
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-delete class="secondary-bg">DEL</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation>+</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation>-</button>
+        <button data-number>.</button>
+        <button data-number>0</button>
+        <button data-operation>/</button>
+        <button data-operation>×</button>
+        <button data-reset class="secondary-bg span-two">RESET</button>
+        <button data-equals class="extra-bg span-two">=</button>
+    </div>
+    </div>
+    </section>
+   </div>
+   <script src="script.js"></script>
+</body>
+</html>

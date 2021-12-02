@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Open+Sans:wght@400;600;700&family=Spartan:wght@700&display=swap");
+
+:root {
+  /* Background colors for main,screen and keypad */
+
+  /* Theme 1 */
+  --main-bg-theme1: hsl(222, 26%, 31%);
+  --keypad-bg-theme1: hsl(223, 31%, 20%);
+  --screen-bg-theme1: hsl(224, 36%, 15%);
+
+  /* Theme 2 */
+  --main-bg-theme2: hsl(0, 0%, 90%);
+  --keypad-bg-theme2: hsl(0, 5%, 81%);
+  --screen-bg-theme2: hsl(0, 0%, 93%);
+
+  /* Theme 3 */
+  --main-bg-theme3: hsl(268, 75%, 9%);
+  --keypad-bg-theme3: hsl(268, 71%, 12%);
+  --screen-bg-theme3: hsl(268, 71%, 12%);
+
+  /* Key colors */
+
+  /* Theme 1 */
+  --primary-bg-theme1: hsl(30, 25%, 89%);
+  --primary-shadow-theme1: hsl(28, 16%, 65%);
+  --secondary-bg-theme1: hsl(225, 21%, 49%);
+  --secondary-shadow-theme1: hsl(224, 28%, 35%);
+  --extra-bg-theme1: hsl(6, 63%, 50%);
+  --extra-shadow-theme1: hsl(6, 70%, 34%);
+
+  /* Theme 2 */
+  --primary-bg-theme2: hsl(45, 7%, 89%);
+  --primary-shadow-theme2: hsl(35, 11%, 61%);
+  --secondary-bg-theme2: hsl(185, 42%, 37%);
+  --secondary-shadow-theme2: hsl(185, 58%, 25%);
+  --extra-bg-theme2: hsl(25, 98%, 40%);
+  --extra-shadow-theme2: hsl(25, 99%, 27%);
+
+  /* Theme 3 */
+  --primary-bg-theme3: hsl(268, 47%, 21%);
+  --primary-shadow-theme3: hsl(290, 70%, 36%);
+  --secondary-bg-theme3: hsl(281, 89%, 26%);
+  --secondary-shadow-theme3: hsl(285, 91%, 52%);
+  --extra-bg-theme3: hsl(176, 100%, 44%);
+  --extra-shadow-theme3: hsl(177, 92%, 70%);
+
+  /* Text Colors */
+  --primary-text-color-theme1: hsl(221, 14%, 31%);
+  --primary-text-color-theme2: hsl(60, 10%, 19%);
+  --primary-text-color-theme3: hsl(52, 100%, 62%);
+  --secondary-text-color-theme3: hsl(198, 20%, 13%);
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+/* Calculator Background */
+
+.calculator-container {
+  background-color: var(--main-bg-theme1);
+  width: clamp(368px, 90%, 1440px);
+  display: flex;
+  justify-content: center;
+}
+
+/* Main Calculator */
+.calculator {
+  width: clamp(350px, 50%, 750px);
+  margin: 70px 0;
+}
+
+/* CALCULATOR HEADER */
+.calculator .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h2 {
+  color: var(--white);
+}
+
+.header p {
+  color: var(--white);
+  font-size: small;
+  margin-bottom: 5px;
+}
+
+/* Right side of the header */
+
+.header .header-right {
+  display: flex;
+  align-items: flex-end;
+}
+
+.header .header-right .themes {
+  margin-left: 20px;
+  width: 76px;
+}
+
+.header .header-right .themes p {
+  letter-spacing: 20px;
+  padding-left: 7px;
+}
+
+/* The Theme toggler buttons */
+
+.header-right .themes .theme-toggle {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: var(--keypad-bg-theme1);
+}
+
+.themes .theme-toggle .custom-radio-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-radio-button input {
+  display: none;
+}
+
+.custom-radio-button .checkmark {
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background-color: var(--extra-bg-theme1);
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-radio-button input:checked + .checkmark {
+  opacity: 1;
+  display: inline-block;
+}
+
+/* DISPLAY SCREEN */
+
+.screen {
+  width: 100%;
+  color: var(--white);
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 30px 0;
+  background-color: var(--screen-bg-theme1);
+  border-radius: 10px;
+}
+
+.screen .previous-operand {
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.screen .current-operand {
+  font-weight: bolder;
+  font-size: 3rem;
+}
+
+/* KEYPAD */
+.keypad-container {
+  background-color: var(--keypad-bg-theme1);
+  border-radius: 10px;
+  padding: 30px 0;
+}
+
+.keypad-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 120px);
+  grid-template-rows: repeat(5, 70px);
+  gap: 30px;
+}
+
+.keypad-grid > button {
+  cursor: pointer;
+  font-size: 2.3rem;
+  outline: none;
+  background-color: var(--primary-bg-theme1);
+  border: 1px solid var(--primary-bg-theme1);
+  border-radius: 10px;
+  box-shadow: -2px 4px var(--primary-shadow-theme1);
+  color: var(--primary-text-color-theme1);
+  font-weight: bold;
+}
+
+.keypad-grid > button:hover {
+  background-color: var(--keypad-bg-theme1);
+}
+
+.keypad-grid :nth-child(4),
+.keypad-grid :nth-child(17) {
+  background-color: var(--secondary-bg-theme1);
+  box-shadow: -2px 4px var(--secondary-shadow-theme1);
+  border: 1px solid var(--secondary-bg-theme1);
+  color: var(--white);
+}
+
+.keypad-grid :last-child {
+  background-color: var(--extra-bg-theme1);
+  box-shadow: var(--extra-shadow-theme1);
+  border: 1px solid var(--extra-bg-theme1);
+  color: var(--white);
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.secondary-bg {
+  background-color: var(--secondary-bg-theme1);
+}
+
+.extra-bg {
+  background-color: var(--extra-bg-theme1);
+}
