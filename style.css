@@ -120,6 +120,7 @@ body {
   justify-content: space-between;
   border-radius: 20px;
   background-color: var(--keypad-bg-theme1);
+  cursor: pointer;
 }
 
 .themes .theme-toggle .custom-radio-button {
@@ -129,6 +130,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .custom-radio-button input {
