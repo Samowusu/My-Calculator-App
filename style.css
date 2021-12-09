@@ -50,6 +50,10 @@
   --primary-text-color-theme3: hsl(52, 100%, 62%);
   --secondary-text-color-theme3: hsl(198, 20%, 13%);
   --white: #fff;
+
+  --grid-column-width: clamp(58px, 18%, 120px);
+  --grid-row-height: clamp(20px, 18%, 70px);
+  --grid-gap: clamp(20px, 5%, 30px);
 }
 
 * {
@@ -184,21 +188,21 @@ body {
 .keypad-container {
   background-color: var(--keypad-bg-theme1);
   border-radius: 10px;
-  padding: 30px 0;
+  padding: 50px 0;
 }
 
 .keypad-grid {
   display: grid;
   justify-content: center;
   align-content: center;
-  grid-template-columns: repeat(4, 120px);
-  grid-template-rows: repeat(5, 70px);
-  gap: 30px;
+  grid-template-columns: repeat(4, var(--grid-column-width));
+  grid-template-rows: repeat(5, var(--grid-row-height));
+  gap: var(--grid-gap);
 }
 
 .keypad-grid > button {
   cursor: pointer;
-  font-size: 2.3rem;
+  font-size: clamp(1.3rem, 3vw, 2.3rem);
   outline: none;
   background-color: var(--primary-bg-theme1);
   border: 1px solid var(--primary-bg-theme1);
