@@ -1,3 +1,5 @@
+
+
 class Calculator {
     constructor(previousOperandText,currentOperandText) {
         this.previousOperandText = previousOperandText;
@@ -111,22 +113,41 @@ const deleteButton = document.querySelector('[data-delete]');
 const resetButton  = document.querySelector('[data-reset]');
 const previousOperandText = document.querySelector('[data-previous-operand]');
 const currentOperandText = document.querySelector('[data-current-operand]');
-const firstThemeButton = document.querySelector('#first');
-const secondThemeButton = document.querySelector('#second');
-const thirdThemeButton = document.querySelector('#third');
-const themeFill = document.querySelector('.theme-toggle');
-const mainBackground = document.querySelector('.calculator-container');
-const screen = document.querySelector('.screen');
-const keypad = document.querySelector('.keypad-container');
-const toggleButton = document.querySelector('.checkmark');
+const toggleButtons = document.querySelectorAll('.radio');
+const themeStyle = document.querySelector('#theme-style');
 
-secondThemeButton.addEventListener('click', () => {
-    mainBackground.style.background = 'hsl(0, 0%, 90%)';
-    screen.style.background = 'hsl(0, 0%, 93%)';
-    keypad.style.background = 'hsl(0, 5%, 81%)';
-    themeFill.style.background = 'hsl(0, 5%, 81%)';
-    toggleButton.style.background = 'hsl(25, 98%, 40%)';
-})
+
+for (var i=0; toggleButtons.length > i; i++){
+    toggleButtons[i].addEventListener('click',function(){
+        let mode = this.dataset.mode;
+        changeTheme(mode);
+    })
+}
+
+
+
+// toggleButtons.forEach(button => {
+//     button.addEventListener('click', () => {
+//         let mode = this.dataset.mode;
+//         console.log('clicked', mode)
+//     })
+// })
+
+
+
+const changeTheme = (mode) => {
+    if (mode == 'dark') {
+        themeStyle.href = "style.css"
+    }
+    if (mode == 'light') {
+        themeStyle.href = "light.css"
+    }
+    if (mode == 'purple') {
+        themeStyle.href = "purple.css"
+    }
+
+}
+
 
 const calculator = new Calculator(previousOperandText,currentOperandText);
 

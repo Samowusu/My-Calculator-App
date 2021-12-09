@@ -1,0 +1,22 @@
+:root {
+  /* Background colors for main,screen and keypad */
+
+  /* Theme 2 */
+  --main-bg: hsl(0, 0%, 90%);
+  --keypad-bg: hsl(0, 5%, 81%);
+  --screen-bg: hsl(0, 0%, 93%);
+
+  /* Key colors */
+
+  /* Theme 2 */
+  --primary-bg: hsl(45, 7%, 89%);
+  --primary-shadow: hsl(35, 11%, 61%);
+  --secondary-bg: hsl(185, 42%, 37%);
+  --secondary-shadow: hsl(185, 58%, 25%);
+  --extra-bg: hsl(25, 98%, 40%);
+  --extra-shadow: hsl(25, 99%, 27%);
+
+  /* Text Colors */
+  --primary-text-color: hsl(60, 10%, 19%);
+  --header-color: hsl(60, 10%, 19%);
+}

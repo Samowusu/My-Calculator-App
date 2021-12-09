@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link id="theme-style" rel="stylesheet" href="">
     <title>My Calculator App</title>
 </head>
 <body>
@@ -18,17 +19,17 @@
               <p>123</p>
               <div class="theme-toggle">
                 <label class="custom-radio-button">
-                  <input id="first" name="toggle-state" type="radio" checked />
+                  <input data-mode="dark" class="radio" id="first" name="toggle-state" type="radio" />
                   <span class="checkmark"></span>
                 </label>
               
                 <label class="custom-radio-button">
-                  <input id="second" name="toggle-state" type="radio" />
+                  <input data-mode="light" id="second" class="radio" name="toggle-state" type="radio" />
                   <span class="checkmark"></span>
                 </label>
               
                 <label class="custom-radio-button">
-                  <input id="third" name="toggle-state" type="radio" />
+                  <input data-mode="purple" id="third" class="radio" name="toggle-state" type="radio" />
                   <span class="checkmark"></span>
                 </label>
               </div>

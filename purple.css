@@ -1,0 +1,31 @@
+:root {
+  /* Background colors for main,screen and keypad */
+
+  /* Theme 3 */
+  --main-bg: hsl(268, 75%, 9%);
+  --keypad-bg: hsl(268, 71%, 12%);
+  --screen-bg: hsl(268, 71%, 12%);
+
+  /* Key colors */
+
+  /* Theme 3 */
+  --primary-bg: hsl(268, 47%, 21%);
+  --primary-shadow: hsl(290, 70%, 36%);
+  --secondary-bg: hsl(281, 89%, 26%);
+  --secondary-shadow: hsl(285, 91%, 52%);
+  --extra-bg: hsl(176, 100%, 44%);
+  --extra-shadow: hsl(177, 92%, 70%);
+
+  /* Text Colors */
+
+  --primary-text-color: hsl(52, 100%, 62%);
+  --secondary-text-color: hsl(198, 20%, 13%);
+  --header-color: hsl(52, 100%, 62%);
+}
+
+.keypad-grid :last-child {
+  background-color: var(--extra-bg);
+  box-shadow: var(--extra-shadow);
+  border: 1px solid var(--extra-bg);
+  color: var(--secondary-text-color);
+}
