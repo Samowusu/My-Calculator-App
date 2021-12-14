@@ -1,5 +1,7 @@
 
 
+
+
 class Calculator {
     constructor(previousOperandText,currentOperandText) {
         this.previousOperandText = previousOperandText;
@@ -117,6 +119,7 @@ const toggleButtons = document.querySelectorAll('.radio');
 const themeStyle = document.querySelector('#theme-style');
 
 
+
 for (var i=0; toggleButtons.length > i; i++){
     toggleButtons[i].addEventListener('click',function(){
         let mode = this.dataset.mode;
@@ -126,25 +129,23 @@ for (var i=0; toggleButtons.length > i; i++){
 
 
 
-// toggleButtons.forEach(button => {
-//     button.addEventListener('click', () => {
-//         let mode = this.dataset.mode;
-//         console.log('clicked', mode)
-//     })
-// })
 
 
 
-const changeTheme = (mode) => {
+function changeTheme(mode){
     if (mode == 'dark') {
         themeStyle.href = "style.css"
+        toggleButtons[0].checked = true
     }
     if (mode == 'light') {
         themeStyle.href = "light.css"
+        toggleButtons[1].checked = true
     }
     if (mode == 'purple') {
         themeStyle.href = "purple.css"
+        toggleButtons[2].checked = true
     }
+    window.localStorage.setItem('theme',mode)
 
 }
 
@@ -179,3 +180,12 @@ deleteButton.addEventListener('click', () => {
     calculator.delete();
     calculator.updateDisplay();
 })
+
+let theme = window.localStorage.getItem('theme');
+
+if(theme == null){
+    changeTheme('dark')
+}else {
+    changeTheme(theme)
+}
+
